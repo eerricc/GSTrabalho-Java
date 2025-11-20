@@ -1,32 +1,30 @@
-# 🚀 HumanTech API
+# 🌐 HumanTech Global Solution
 
-API REST desenvolvida com **Java + Spring Boot** para gerenciamento de vagas de emprego.  
-Permite **criar, listar, buscar, atualizar e deletar vagas**, com suporte a documentação via Swagger.
+A aplicação HumanTech Global Solution é uma API REST construída em Java com Spring Boot para gerenciar processos de recrutamento. O sistema oferece endpoints para criação, atualização, remoção e consulta de vagas, além de suporte a documentação automática via Swagger. A solução utiliza Spring Data JPA para persistência, banco H2 para ambiente de desenvolvimento e segue o padrão MVC dentro do ecossistema Spring.
 
----
+O projeto permite que clientes da API realizem operações completas sobre vagas de emprego, incluindo cadastro, listagem, busca detalhada e exclusão. A infraestrutura inclui configuração de banco integrada, testes via Postman/Insomnia e console H2 para inspeção dos dados. Ferramentas como Lombok e Maven otimizam o desenvolvimento, enquanto o Swagger facilita o uso da API e a comunicação com terceiros.
 
-## 📚 Tecnologias Utilizadas
+## 🧰 Tecnologias Utilizadas
 
-- **Java 17+**
-- **Spring Boot**
-- **Spring Web**
-- **Spring Data JPA**
-- **Banco de Dados (H2/MySQL)**
-- **Swagger OpenAPI 3**
-- **Lombok**
-
----
-
-## 🏁 Pré-requisitos
-
-Antes de executar o projeto, certifique-se de ter instalado:
-
-- Java 17 ou superior
+- Java 17+
+- Spring Boot
+- Spring Web
+- Spring Data JPA
+- H2 / MySQL
+- SpringDoc OpenAPI 3 (Swagger)
+- Lombok
 - Maven
-- IDE (IntelliJ, Eclipse, VS Code ou outra)
-- Postman ou Insomnia para testes
 
----
+
+
+## ❗ Requisitos
+
+- Java 17+
+- Maven instalado
+- IDE de preferência (IntelliJ, Eclipse, VS Code)
+- Postman / Insomnia para testes
+
+
 
 ## 📦 Instalação e Execução
 
@@ -40,25 +38,29 @@ mvn clean install
 
 # Executar aplicação
 mvn spring-boot:run
+```
+## 🔌 Main Endpoints
 
-🔌 Endpoints Principais
-Método	Endpoint	Descrição
-POST	/vagas	Cria uma nova vaga
-GET	/vagas/{id}	Busca vaga pelo ID
-GET	/vagas	Lista todas as vagas
-PUT	/vagas/{id}	Atualiza uma vaga
-DELETE	/vagas/{id}	Deleta uma vaga
-📤 Exemplo de Requisição (POST /vagas)
+| Método | Endpoint      | Descrição             |
+|--|-||
+| POST   | /vagas         | Cria uma nova vaga     |
+| GET    | /vagas/{id}    | Busca vaga pelo ID     |
+| GET    | /vagas         | Lista todas as vagas   |
+| PUT    | /vagas/{id}    | Atualiza uma vaga      |
+| DELETE | /vagas/{id}    | Deleta uma vaga        |
 
+
+### 📤 Exemplo de Requisição (POST /vagas)
+```bash
 {
   "titulo": "Dev Back-End",
   "tipoTrabalho": "Presencial",
   "salario": 6500.00,
   "descricao": "Experiência com Java e Spring Boot"
 }
-
-📥 Exemplo de Resposta
-
+```
+### 📥 Exemplo de Resposta
+```bash
 {
   "id": 1,
   "titulo": "Dev Back-End",
@@ -66,46 +68,43 @@ DELETE	/vagas/{id}	Deleta uma vaga
   "salario": 6500.00,
   "descricao": "Experiência com Java e Spring Boot"
 }
+```
+## ❔ Como testar no Postman
 
-📍 Como testar no Postman
+1. Execute o projeto com: **mvn spring-boot:run**
 
-    Execute o projeto com mvn spring-boot:run
+2. Use o endereço base: **http://localhost:8080**
 
-    No Postman, use http://localhost:8080
+3. Envie requisições para os endpoints listados
 
-    Envie requisições para os endpoints listados acima
+## 📖 Documentation Swagger
 
-📖 Documentação Swagger
+    Acesse após iniciar a aplicação:
 
-Após iniciar a aplicação, acesse:
-
-🔗 http://localhost:8080/swagger-ui.html
-ou
 🔗 http://localhost:8080/swagger-ui/index.html
-🧪 Executar Testes
 
-mvn test
+    Para executar: mvn test
 
-🛠 Configuração do Banco (application.properties)
-Exemplo usando H2 para testes
+## 🛠 Configuração do Banco (application.properties)
 
-spring.datasource.url=jdbc:h2:mem:testdb
-spring.datasource.driverClassName=org.h2.Driver
-spring.datasource.username=sa
-spring.datasource.password=
-spring.jpa.hibernate.ddl-auto=update
-spring.h2.console.enabled=true
+- spring.datasource.url=jdbc:h2:mem:testdb  
+- spring.datasource.driverClassName=org.h2.Driver  
+- spring.datasource.username=sa  
+- spring.datasource.password=  
+- spring.jpa.hibernate.ddl-auto=update  
+- spring.h2.console.enabled=true  
 
-🔗 Console H2: http://localhost:8080/h2-console
-
+### 🔗 Console H2: **http://localhost:8080/h2-console**
+```bash
 <dependency>
     <groupId>org.springdoc</groupId>
     <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
     <version>2.5.0</version>
 </dependency>
+```
 
-
-👨‍💻 Autor
+## 👨‍💻 Authors
 
 Eric Segawa Montagner
+
 Pedro Pereira dos Santos
