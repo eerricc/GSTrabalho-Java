@@ -105,7 +105,7 @@ mvn spring-boot:run
 
 ## 👨‍💻 Authors
 
-Eric Segawa Montagner
+Eric Segawa Montagner rm558224
 
-Pedro Pereira dos Santos
+Pedro Pereira dos Santos rm552047
 
